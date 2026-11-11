@@ -1,55 +1,123 @@
-Fendly Privacy Policy
-Effective date: November 11, 2026
-The short version
-	•	Your messages are scanned on your phone. We never upload, store, sell or share them.
-	•	Only web links found in a message are sent to Google Cloud Web Risk to check whether they are dangerous.
-	•	The list of blocked scams and your Family Guardian's contact details stay on your device, encrypted.
-	•	No ads. No analytics or tracking SDKs. No account required.
-1. Who we are
-Fendly ("Fendly", "we", "us") is a mobile app that helps protect you from scam and phishing messages and unwanted calls. The app is published by [Your company or developer name]. Contact: [support email].
-2. Information the app accesses and why
-Data
-Why we use it
-Where it goes
-Notification content from messaging apps (SMS, WhatsApp, email, etc.), accessed with Android's Notification Access permission
-To detect scam wording and dangerous links as messages arrive
-Analyzed in your phone's memory and discarded right away. Never written to storage, logged, or sent to us.
-Web links (URLs) found in those messages, or that you paste into "Check a Link"
-To check whether a link is a known phishing or malware site
-Sent over an encrypted connection to Google Cloud Web Risk. The surrounding message text is never sent. Results are cached in memory for up to 24 hours.
-Blocked-threat log: scam type, impersonated brand, the website's address without its query string, the app it arrived in, and the time
-To show you "Recent Threats Blocked"
-Stored only on your device in an encrypted database. Deleted automatically after 90 days.
-Incoming call numbers from people who are not in your contacts (only if you turn on Unknown Caller Shield)
-To silence or block possible scam calls in Senior Mode
-Checked on your device. Only the last 4 digits are kept in the encrypted log. We do not read your contacts or call history.
-Family Guardian details: name, phone number and email you choose to enter
-So you can call or text your guardian from the app
-Stored only on your device. When you tap "Notify Family Member", your own text-messaging app opens with a pre-written message; you decide whether to send it.
-3. What we do not do
-	•	We do not collect your name, account, location, contacts, photos or device advertising ID.
-	•	We do not read your SMS inbox (the app does not use the READ_SMS permission).
-	•	We do not sell, rent or share personal information for advertising.
-	•	We do not use your data to train AI models.
-4. Third-party service
-Link checks are handled by Google Cloud Web Risk, which receives the link being checked and, like any web service, your device's IP address. Google processes this data under the Google Cloud Data Processing Addendum and the Google Privacy Policy. If you have not given the app a network connection, or if the check fails, Fendly still protects you using on-device analysis only.
-5. Permissions
-	•	Notification Access: to scan incoming messages for scams. You can turn this off at any time in Android Settings → Notifications → Device & app notifications.
-	•	Call screening role (optional): for Unknown Caller Shield in Senior Mode.
-	•	Notifications: to show scam warnings.
-	•	Phone (optional): to place a one-tap call to your Family Guardian. If you decline, the dialer opens instead.
-	•	Internet: to check links with Google Cloud Web Risk.
-6. Security
-The threat log is stored in a database encrypted with SQLCipher (256-bit AES). Its key is protected by the Android Keystore, so it cannot be read by other apps or by copying files off the phone. All network traffic uses HTTPS. App data is excluded from cloud backups.
-7. Your choices and deleting your data
-	•	Turn off the Real-Time Scanner in the app, or revoke Notification Access in Android Settings, at any time.
-	•	Delete all data stored by Fendly by going to Android Settings → Apps → Fendly → Storage → Clear storage, or by uninstalling the app.
-	•	Because we do not keep your data on our servers, there is no server-side data for us to delete. If you have questions, email [support email].
-8. Your US state privacy rights
-Residents of California and other US states with consumer privacy laws have rights to know, access, correct and delete personal information, and to opt out of its sale or sharing. Fendly does not sell or share personal information, and does not hold personal information on its servers. To exercise any right or ask a question, contact [support email]. We will not discriminate against you for exercising your rights.
-9. Children
-Fendly is not directed to children under 13, and we do not knowingly collect personal information from children.
-10. Changes to this policy
-If we change how the app handles data, we will update this page and its effective date, and we will tell you in the app before any new kind of data is used.
-11. Contact
-[Your company or developer name] [support email]
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fendly Privacy Policy</title>
+<meta name="description" content="How Fendly handles your data: messages are scanned on your device and never uploaded.">
+<style>
+  :root { --navy:#0F172A; --emerald:#10B981; --slate:#475569; --bg:#F8FAFC; --card:#FFFFFF; --line:#E2E8F0; --text:#0F172A; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#0F172A; --card:#1E293B; --line:#334155; --text:#F1F5F9; --slate:#94A3B8; }
+  }
+  * { box-sizing: border-box; }
+  body { margin:0; background:var(--bg); color:var(--text); font:17px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; }
+  main { max-width: 760px; margin: 0 auto; padding: 32px 16px 64px; }
+  h1 { font-size: 30px; line-height:1.25; margin: 0 0 4px; }
+  h2 { font-size: 21px; margin: 36px 0 8px; }
+  p, li { color: var(--text); }
+  .meta { color: var(--slate); margin: 0 0 24px; }
+  .summary { background: var(--card); border: 1px solid var(--line); border-left: 5px solid var(--emerald); border-radius: 16px; padding: 16px 20px; }
+  .summary ul { margin: 8px 0 0; padding-left: 20px; }
+  table { width: 100%; border-collapse: collapse; margin: 12px 0; font-size: 15px; }
+  th, td { text-align: left; vertical-align: top; padding: 10px; border-bottom: 1px solid var(--line); }
+  th { background: var(--card); }
+  .table-wrap { overflow-x: auto; }
+  a { color: var(--emerald); }
+  .placeholder { background: #FEF3C7; color: #92400E; padding: 0 4px; border-radius: 4px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Fendly Privacy Policy</h1>
+  <p class="meta">Effective date: November 11, 2026</p>
+
+  <div class="summary">
+    <strong>The short version</strong>
+    <ul>
+      <li>Your messages are scanned <strong>on your phone</strong>. We never upload, store, sell or share them.</li>
+      <li>Only <strong>web links</strong> found in a message are sent to Google Cloud Web Risk to check whether they are dangerous.</li>
+      <li>The list of blocked scams and your Family Guardian's contact details stay <strong>on your device</strong>, encrypted.</li>
+      <li>No ads. No analytics or tracking SDKs. No account required.</li>
+    </ul>
+  </div>
+
+  <h2>1. Who we are</h2>
+  <p>Fendly ("Fendly", "we", "us") is a mobile app that helps protect you from scam and phishing messages and unwanted calls. The app is published by <span class="placeholder">[Your company or developer name]</span>. Contact: <span class="placeholder">[support email]</span>.</p>
+
+  <h2>2. Information the app accesses and why</h2>
+  <div class="table-wrap">
+  <table>
+    <tr><th>Data</th><th>Why we use it</th><th>Where it goes</th></tr>
+    <tr>
+      <td><strong>Notification content</strong> from messaging apps (SMS, WhatsApp, email, etc.), accessed with Android's Notification Access permission</td>
+      <td>To detect scam wording and dangerous links as messages arrive</td>
+      <td>Analyzed in your phone's memory and discarded right away. Never written to storage, logged, or sent to us.</td>
+    </tr>
+    <tr>
+      <td><strong>Web links (URLs)</strong> found in those messages, or that you paste into "Check a Link"</td>
+      <td>To check whether a link is a known phishing or malware site</td>
+      <td>Sent over an encrypted connection to <a href="https://cloud.google.com/web-risk">Google Cloud Web Risk</a>. The surrounding message text is never sent. Results are cached in memory for up to 24 hours.</td>
+    </tr>
+    <tr>
+      <td><strong>Blocked-threat log</strong>: scam type, impersonated brand, the website's address without its query string, the app it arrived in, and the time</td>
+      <td>To show you "Recent Threats Blocked"</td>
+      <td>Stored only on your device in an encrypted database. Deleted automatically after 90 days.</td>
+    </tr>
+    <tr>
+      <td><strong>Incoming call numbers</strong> from people who are <em>not</em> in your contacts (only if you turn on Unknown Caller Shield)</td>
+      <td>To silence or block possible scam calls in Senior Mode</td>
+      <td>Checked on your device. Only the last 4 digits are kept in the encrypted log. We do not read your contacts or call history.</td>
+    </tr>
+    <tr>
+      <td><strong>Family Guardian details</strong>: name, phone number and email you choose to enter</td>
+      <td>So you can call or text your guardian from the app</td>
+      <td>Stored only on your device. When you tap "Notify Family Member", your own text-messaging app opens with a pre-written message; you decide whether to send it.</td>
+    </tr>
+  </table>
+  </div>
+
+  <h2>3. What we do not do</h2>
+  <ul>
+    <li>We do not collect your name, account, location, contacts, photos or device advertising ID.</li>
+    <li>We do not read your SMS inbox (the app does not use the READ_SMS permission).</li>
+    <li>We do not sell, rent or share personal information for advertising.</li>
+    <li>We do not use your data to train AI models.</li>
+  </ul>
+
+  <h2>4. Third-party service</h2>
+  <p>Link checks are handled by Google Cloud Web Risk, which receives the link being checked and, like any web service, your device's IP address. Google processes this data under the <a href="https://cloud.google.com/terms/data-processing-addendum">Google Cloud Data Processing Addendum</a> and the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>. If you have not given the app a network connection, or if the check fails, Fendly still protects you using on-device analysis only.</p>
+
+  <h2>5. Permissions</h2>
+  <ul>
+    <li><strong>Notification Access</strong>: to scan incoming messages for scams. You can turn this off at any time in Android Settings → Notifications → Device &amp; app notifications.</li>
+    <li><strong>Call screening role</strong> (optional): for Unknown Caller Shield in Senior Mode.</li>
+    <li><strong>Notifications</strong>: to show scam warnings.</li>
+    <li><strong>Phone</strong> (optional): to place a one-tap call to your Family Guardian. If you decline, the dialer opens instead.</li>
+    <li><strong>Internet</strong>: to check links with Google Cloud Web Risk.</li>
+  </ul>
+
+  <h2>6. Security</h2>
+  <p>The threat log is stored in a database encrypted with SQLCipher (256-bit AES). Its key is protected by the Android Keystore, so it cannot be read by other apps or by copying files off the phone. All network traffic uses HTTPS. App data is excluded from cloud backups.</p>
+
+  <h2>7. Your choices and deleting your data</h2>
+  <ul>
+    <li>Turn off the Real-Time Scanner in the app, or revoke Notification Access in Android Settings, at any time.</li>
+    <li>Delete all data stored by Fendly by going to Android Settings → Apps → Fendly → Storage → Clear storage, or by uninstalling the app.</li>
+    <li>Because we do not keep your data on our servers, there is no server-side data for us to delete. If you have questions, email <span class="placeholder">[support email]</span>.</li>
+  </ul>
+
+  <h2>8. Your US state privacy rights</h2>
+  <p>Residents of California and other US states with consumer privacy laws have rights to know, access, correct and delete personal information, and to opt out of its sale or sharing. Fendly does not sell or share personal information, and does not hold personal information on its servers. To exercise any right or ask a question, contact <span class="placeholder">[support email]</span>. We will not discriminate against you for exercising your rights.</p>
+
+  <h2>9. Children</h2>
+  <p>Fendly is not directed to children under 13, and we do not knowingly collect personal information from children.</p>
+
+  <h2>10. Changes to this policy</h2>
+  <p>If we change how the app handles data, we will update this page and its effective date, and we will tell you in the app before any new kind of data is used.</p>
+
+  <h2>11. Contact</h2>
+  <p><span class="placeholder">Nitish Kumar Tiwary</span><br><span class="placeholder">info.nitish1997@gmail.com</span></p>
+</main>
+</body>
+</html>
